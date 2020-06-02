@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "smarthomefyp-f9244",
+  "private_key_id": "46cf432cca6e3300dfd168107b7047224d639fa6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC2PGJEOLV0oaL/\nQIP5spbK6ddOrk3aIn5EoU6+sAKVbHKEITs5O4szXsXNG6uAVHtgKeCLUdc6+2SK\nVNaNaNMoCj26Qif1BhGzfrQVq+6twsjor86HzMnHzLUfumrFLjxwyzxI41e9m1+/\n00KQtrum4bVa2zBGyleCV+OAGesj2YULiZBcE3dX3VLxZcuqw5bJ2NXTXIV8gVh1\nabPehqNh5v2KfW6ZNCisgAQE/7Pga67dmXqEq4AiPHcDEvWlXslt3CNPyWRZIpiZ\nJsgugLa+XLKgN9YOKet3lUmsmyuMvwnw9fzz39lVTfSPpHA6/d1AJIIRfHrb5Foa\nHlXHKc+NAgMBAAECggEACscfeLFx6ef1X+tM4uOxD2ctGLYuXIxVs3Fm2thGDthP\nHYlpm0TuQqeEQ1Ezn29frJxNb2/zrsVXeObzmYFtm5yfcfifrFojid4ggHeesiAn\nCbv8FwQBmxN8UtgPoIHPiUw70IPBmLErxIiWE0D7cC9BLpJwFH+7FTZlehoOUhxd\nj/3q2q9sFocMg6NYiyCrH424cdRKMVYaDnay208Iuj59KNz0cpmxpMC2VauzAhn5\nCGRQED+O3zkQ9ZNfTvm/ChzMIKzb9eDnHcgBm7sGeYPqMKkr1sCW0qzFyM8iSXK0\navS8p6TDZ0VFbQtim1Po23WelAO8rXN38j/RgOVEAQKBgQDxvh0bv/8I1Wj5XtdI\nRap8X2lEtQC5modwCOLsoUlBpT+XXpzbx9d6GLifjeLBo9AhWtsiNHhw7bzANfc/\ny98/+sMWLfADpQl3VFH1ZZG3VSjNMdMhDMas332wxhl6DNTEcdOTKB7RSGzVafRH\ndKwLSg3NRjby7xRDfc/P4DYBzQKBgQDA+9LF8LwCU7/4s5b0kaqF7Sdxcg7qa90m\nvEMO915nM1OwtzrXAhiBPTuyPnEtj3+bF6hjG6aRh/yp8hKrZCDS51oogr3cKd6t\no/9l9L9MQSb4ajViUaxSMVlZp5GavauJBQCfZr1lTp48UcEXKLI8vFTrozncYykH\nLJHoZdhEwQKBgFaPt8aXAlB8cmFQ54+WeoyccYpLsd3ECplAZVlMC3o5HMMr+sjs\nDylGLt3bJYYnDUDUUsE1vqbZSgwdhtJOQzuapD6N5nK3puMWy14up3XZRYnsPGiK\nNZ3zTQN+e+LrM0jAZX09EYPpBieJEBKCIZTNSJHngYeNuljMdRw/cbdFAoGAS2CQ\n/RuAc/A+ZWfQKIrU7iapZ1hDlzC2WrDiCHB6gRi9MaL/6oc5BxHhxUc6ca9BClT9\nQmjEcMeK2t5giG09nOMchgI7IkmAXpZV5X7pUWGJVTI208ZO5nO8EJaw+p3m6Ef5\n7Ej25SEGEU1lfCQ7KhntmXRR31Ej71drTjipdoECgYEAuHjnhgWE452/dbRevohi\nyl9Jl11qxM2fEYKjndbwVhlVMe3ZmlR1Bj4AdUNbTkyOGOeyOTRFORuXpqhKgxca\neVj/pBSP+VuNRiGliXZ/ITvuZ/IXj26m3+F+nEQqYyMCqy6L9FQD9Z5vlu39xTVU\n7y86NUlnq+gDztgoUPUx724=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-tmc4c@smarthomefyp-f9244.iam.gserviceaccount.com",
+  "client_id": "108839695196009797299",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-tmc4c%40smarthomefyp-f9244.iam.gserviceaccount.com"
+}
