@@ -6,8 +6,8 @@
 #include <IOXhop_FirebaseESP32.h>
 #include "Adafruit_APDS9960.h"
 
-#define WIFI_SSID "LINKSYSSS"
-#define WIFI_PASSWORD "13Askari2000+51"
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
 #define FIREBASE_HOST "smarthomefyp-f9244.firebaseio.com"
 #define FIREBASE_AUTH "tnKgoJBwESx2pP4WMqJL0S35TknWS4cGbydAESbk"
 
