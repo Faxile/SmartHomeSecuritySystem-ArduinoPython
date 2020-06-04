@@ -2,8 +2,8 @@
 #include <IOXhop_FirebaseESP32.h>
 #include <HTTPClient.h>
 
-#define WIFI_SSID "EVO-Charji-BA71"
-#define WIFI_PASSWORD "farhan7410"
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
 #define FIREBASE_HOST "smarthomefyp-f9244.firebaseio.com"
 #define FIREBASE_AUTH "tnKgoJBwESx2pP4WMqJL0S35TknWS4cGbydAESbk"
 
