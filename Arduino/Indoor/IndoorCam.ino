@@ -1,12 +1,3 @@
-#include <Firebase.h>
-#include <FirebaseArduino.h>
-#include <FirebaseCloudMessaging.h>
-#include <FirebaseError.h>
-#include <FirebaseHttpClient.h>
-#include <FirebaseObject.h>
-
-
-
 // ArduCAM Mini demo (C)2017 Lee
 // Web: http://www.ArduCAM.com
 // This program is a demo of how to use most of the functions
@@ -22,6 +13,7 @@
 
 // This program requires the ArduCAM V4.0.0 (or later) library and ArduCAM ESP8266 2MP/5MP camera
 // and use Arduino IDE 1.6.8 compiler or above
+
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
@@ -29,11 +21,14 @@
 #include <Wire.h>
 #include <ArduCAM.h>
 #include <SPI.h>
+#include <IOXhop_FirebaseESP32.h>
+
 #include "memorysaver.h"
 #if !(defined ESP8266 )
 #error Please select the ArduCAM ESP8266 UNO board in the Tools/Board
 #endif
-
+#define FIREBASE_HOST "smarthomefyp-f9244.firebaseio.com"
+#define FIREBASE_AUTH "tnKgoJBwESx2pP4WMqJL0S35TknWS4cGbydAESbk"
 //This demo can only work on OV2640_MINI_2MP or OV2640_MINI_2MP_PLUS or ARDUCAM_SHIELD_V2 platform.
 #if !(defined (OV2640_MINI_2MP)||defined (OV2640_MINI_2MP_PLUS)||defined (OV5640_MINI_5MP_PLUS) || defined (OV5642_MINI_5MP_PLUS) \
     || defined (OV5642_MINI_5MP) || defined (OV5642_MINI_5MP_BIT_ROTATION_FIXED) \
@@ -42,8 +37,7 @@
 #endif
 // set GPIO16 as the slave select :
 const int CS = 16;
-#define FIREBASE_HOST "smarthomefyp-f9244.firebaseio.com"
-#define FIREBASE_AUTH "tnKgoJBwESx2pP4WMqJL0S35TknWS4cGbydAESbk"
+
 
 //you can change the value of wifiType to select Station or AP mode.
 //Default is AP mode.
@@ -185,11 +179,6 @@ void serverStream() {
     if (!client.connected()) {
       Serial.println("break"); break;
     }
-    String fire_cam = Firebase.getString("indoor");
-    if(fire_cam == "0")
-    {
-      break;
-    }
     response = "--frame\r\n";
     response += "Content-Type: image/jpeg\r\n\r\n";
     server.sendContent(response);
@@ -277,6 +266,7 @@ void setup() {
 #endif
   Serial.begin(115200);
   Serial.println(F("ArduCAM Start!"));
+  
   // set the CS as an output:
   pinMode(CS, OUTPUT);
   digitalWrite(CS, HIGH);
@@ -315,7 +305,7 @@ void setup() {
   else
     Serial.println(F("OV5640 detected."));
 #elif defined (OV5642_MINI_5MP_PLUS) || defined (OV5642_MINI_5MP) || defined (OV5642_MINI_5MP_BIT_ROTATION_FIXED) ||(defined (OV5642_CAM))
-[  //Check if the camera module type is OV5642
+  //Check if the camera module type is OV5642
   myCAM.wrSensorReg16_8(0xff, 0x01);
   myCAM.rdSensorReg16_8(OV5642_CHIPID_HIGH, &vid);
   myCAM.rdSensorReg16_8(OV5642_CHIPID_LOW, &pid);
@@ -323,7 +313,7 @@ void setup() {
     Serial.println(F("Can't find OV5642 module!"));
   }
   else
- [   Serial.println(F("OV5642 detected."));
+    Serial.println(F("OV5642 detected."));
 #endif
 
 
@@ -363,8 +353,6 @@ void setup() {
       Serial.print(F("."));
     }
     Serial.println(F("WiFi connected"));
-    Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
-    Serial.println(" Firebase Connected!");
     Serial.println("");
     Serial.println(WiFi.localIP());
   } else if (wifiType == 1) {
@@ -387,11 +375,14 @@ void setup() {
   server.onNotFound(handleNotFound);
   server.begin();
   Serial.println(F("Server started"));
- 
+  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
+  Serial.println(" Firebase Connected!");
 }
 
 void loop() {
-  
+  String status = Firebase.getString("/sensorstatus/command");
+  if (status == "1")
+  {
   server.handleClient();
-  
+  }
 }
