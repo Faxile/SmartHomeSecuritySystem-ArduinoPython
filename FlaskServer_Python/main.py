@@ -47,8 +47,9 @@ def cam_notify():
 
 if __name__ == "__main__":
     firebase = firebase.FirebaseApplication("https://smarthomefyp-f9244.firebaseio.com/")
-    cred = credentials.Certificate("C:/Users/User/Documents/FYP/Python Folder/Flask/smart-home-firebase.json")
+    cred = credentials.Certificate("C:/Users/Farhan-DESKTOP/Desktop/FYP/Flask_Updated/smart-home-firebase.json")
     default_app = firebase_admin.initialize_app(cred, {'databaseURL': 'https://smarthomefyp-f9244.firebaseio.com/'})
+    topic = 'smarthometest'
     ref = db.reference('users/141/notification_token')
     registration_token = ref.get()
 
@@ -61,34 +62,36 @@ if __name__ == "__main__":
             'channelId': 'NeighborHood'
         
         },  
-        token=registration_token,   
-
+        #token=registration_token,  
+        topic=topic,
+        
     
     )
     patt_message = messaging.Message(
         notification = messaging.Notification(
                 title = "Lights and Fans have been automatically turned on",
-                body = "The Lights and Fans have been automatically turned on by the pattern learning module :)."
+                body = "The Lights and Fans have been automatically turned as per your normal routine."
                 ),
         data={
             'channelId': 'NeighborHood'
         
         },  
-        token=registration_token,   
+        #token=registration_token,   
+        topic=topic,
 
     
     )
     cam_message = messaging.Message(
         notification = messaging.Notification(
                 title = "Indoor Security camera is turned on",
-                body = "The indoor security camera is turned on due to the CO2 sensors detecting human presence when away"
+                body = "The indoor security camera has been triggered as we have detected human presence while you were away"
                 ),
         data={
             'channelId': 'Indoor'
         
         },  
-        token=registration_token,   
-
+        #token=registration_token,   
+        topic=topic,
     
     )
     app.run(host = '0.0.0.0')
