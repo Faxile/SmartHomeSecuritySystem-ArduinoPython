@@ -1,18 +1,3 @@
-// ArduCAM Mini demo (C)2017 Lee
-// Web: http://www.ArduCAM.com
-// This program is a demo of how to use most of the functions
-// of the library with ArduCAM ESP8266 2MP/5MP camera.
-// This demo was made for ArduCAM ESP8266 2MP/5MP Camera.
-// It can take photo and send to the Web.
-// It can take photo continuously as video streaming and send to the Web.
-// The demo sketch will do the following tasks:
-// 1. Set the camera to JPEG output mode.
-// 2. if server.on("/capture", HTTP_GET, serverCapture),it can take photo and send to the Web.
-// 3.if server.on("/stream", HTTP_GET, serverStream),it can take photo continuously as video
-//streaming and send to the Web.
-
-// This program requires the ArduCAM V4.0.0 (or later) library and ArduCAM ESP8266 2MP/5MP camera
-// and use Arduino IDE 1.6.8 compiler or above
 
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
